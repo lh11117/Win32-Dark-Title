@@ -1,4 +1,4 @@
-# Win32-Dark_Title
+# Win32-Dark-Title
 可以让您的win32应用标题栏支持深色模式
 
 编译：需要使用[小熊猫C++](https://royqh1979.gitee.io/redpandacpp/download "点击这里下载")来完成编译！
