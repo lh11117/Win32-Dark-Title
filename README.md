@@ -6,3 +6,5 @@
 你也可以[下载编译好的dll](https://github.com/lh11117/Win32-Dark-Title/releases/tag/1.0 "下载页面")
 
 *注意：这是32位的dll，如需64位，请自行编译dll！*
+
+如何使用？[以python为例](https://github.com/lh11117/Win32-Dark-Title/blob/main/help.md)
