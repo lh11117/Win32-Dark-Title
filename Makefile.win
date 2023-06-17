@@ -1,0 +1,31 @@
+# Project: win32_dark_title_dll
+# Makefile created by Dev-C++ 6.7.5
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = dllmain.o
+LINKOBJ  = dllmain.o
+LIBS     = -L"C:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.3.0/" -L"C:/软件/Dev-Cpp/MinGW32/lib/gcc/" -L"C:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/lib/" -L"C:/软件/Dev-Cpp/MinGW32/lib/" -L"C:/软件/Dev-Cpp/MinGW32/lib" -L"C:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/lib" -g3 -static-libgcc -lgdi32 -lcomdlg32 -ldwmapi -static
+INCS     = -I"C:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.3.0/include" -I"C:/软件/Dev-Cpp/MinGW32/include" -I"C:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.3.0/include-fixed" -I"C:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/include"
+CXXINCS  = -I"C:/软件/Dev-Cpp/MinGW32/include/c++/10.3.0" -I"C:/软件/Dev-Cpp/MinGW32/include/c++/10.3.0/i686-w64-mingw32" -I"C:/软件/Dev-Cpp/MinGW32/include/c++/10.3.0/backward" -I"C:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.3.0/include" -I"C:/软件/Dev-Cpp/MinGW32/include" -I"C:/软件/Dev-Cpp/MinGW32/lib/gcc/i686-w64-mingw32/10.3.0/include-fixed" -I"C:/软件/Dev-Cpp/MinGW32/i686-w64-mingw32/include"
+BIN      = win32_dark_title_dll.dll
+CXXFLAGS = $(CXXINCS) -Wall -Wextra -g3 -DBUILDING_DLL=1
+ENCODINGS = -finput-charset=utf-8 -fexec-charset=gbk
+CFLAGS   = $(INCS) -Wall -Wextra -g3 -DBUILDING_DLL=1
+RM       = del /q /f
+DEF      = libwin32_dark_title_dll.def
+STATIC   = libwin32_dark_title_dll.a
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN) $(DEF) $(STATIC)
+
+$(BIN): $(LINKOBJ)
+	$(CPP) -mdll $(LINKOBJ) -o "$(BIN)" $(LIBS) -Wl,--output-def,$(DEF),--out-implib,$(STATIC)
+
+dllmain.o: dllmain.cpp
+	$(CPP) -c dllmain.cpp -o dllmain.o $(CXXFLAGS) 

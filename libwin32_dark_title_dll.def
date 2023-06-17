@@ -1,0 +1,8 @@
+EXPORTS
+    CAN_NOT_GET_THEME @1
+    WIN32_DARK @2
+    WIN32_LIGHT @3
+    int2hwnd @4
+    is_dark @5
+    set_dark_title @6
+    set_light_title @7
